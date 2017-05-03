@@ -1,29 +1,16 @@
-//-----------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------
 // <copyright file="CustomerController.cs" company="Genesys Source">
-//      Licensed to the Apache Software Foundation (ASF) under one or more 
-//      contributor license agreements.  See the NOTICE file distributed with 
-//      this work for additional information regarding copyright ownership.
-//      The ASF licenses this file to You under the Apache License, Version 2.0 
-//      (the 'License'); you may not use this file except in compliance with 
-//      the License.  You may obtain a copy of the License at 
-//       
-//        http://www.apache.org/licenses/LICENSE-2.0 
-//       
-//       Unless required by applicable law or agreed to in writing, software  
-//       distributed under the License is distributed on an 'AS IS' BASIS, 
-//       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
-//       See the License for the specific language governing permissions and  
-//       limitations under the License. 
+//      Copyright (c) 2017 Genesys Source. All rights reserved.
+//      All rights are reserved. Reproduction or transmission in whole or in part, in
+//      any form or by any means, electronic, mechanical or otherwise, is prohibited
+//      without the prior written consent of the copyright owner.
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
-using System.Linq;
-using System.Web.Mvc;
+using Foundation.Entity;
 using Genesys.Extensions;
 using Genesys.Extras.Web.Http;
-using Foundation.Entity;
-using System.Collections.Generic;
-using Genesys.Foundation.Entity;
+using Genesys.Foundation.Data;
+using System.Web.Mvc;
 
 namespace Foundation.WebApp
 {
@@ -51,7 +38,7 @@ namespace Foundation.WebApp
         [HttpGet]
         public ActionResult Summary(string id)
         {
-            var reader = new EntityReader<CustomerInfo>();
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             var model = new CustomerModel();
             model.Fill(reader.GetByID(id.TryParseInt32()));
             if (model.ID == TypeExtension.DefaultInteger)
@@ -70,7 +57,7 @@ namespace Foundation.WebApp
         [HttpPost()]
         public ActionResult Summary(CustomerModel model)
         {
-            var reader = new EntityReader<CustomerInfo>();                  
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();                  
             model.Fill(reader.GetByID(model.ID));
             return View(CustomerController.EditView, model);
         }
@@ -111,7 +98,7 @@ namespace Foundation.WebApp
         [HttpGet()]
         public ActionResult Edit(string id)
         {
-            var reader = new EntityReader<CustomerInfo>();
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             var model = new CustomerModel();
             model.Fill(reader.GetByID(id.TryParseInt32()));
             if (model.ID == TypeExtension.DefaultInteger)
@@ -131,7 +118,7 @@ namespace Foundation.WebApp
         [HttpPost()]
         public ActionResult Edit(CustomerModel model)
         {
-            var reader = new EntityReader<CustomerInfo>();
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             var customer = new CustomerInfo();
             
             customer = reader.GetByID(model.ID);
@@ -150,7 +137,7 @@ namespace Foundation.WebApp
         [HttpGet()]
         public ActionResult Delete(string id)
         {
-            var reader = new EntityReader<CustomerInfo>();
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             var model = new CustomerModel();
             model.Fill(reader.GetByID(id.TryParseInt32()));
             if (model.ID == TypeExtension.DefaultInteger)
@@ -170,7 +157,7 @@ namespace Foundation.WebApp
         [HttpPost()]
         public ActionResult Delete(CustomerModel model)
         {
-            var reader = new EntityReader<CustomerInfo>();
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             var customer = new CustomerInfo();
 
             customer = reader.GetByID(model.ID);
