@@ -257,6 +257,16 @@ a {
 }
 
 /* 
+* Glyphicon
+*/
+.glyphicon-building:before {
+    content: "\26EA";
+}
+.glyphicon-castle:before {
+    content: "\26EB";
+}
+
+/* 
 * Common
 */
 .hr-sm {
