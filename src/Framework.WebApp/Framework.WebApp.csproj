@@ -206,11 +206,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Framework.WebApp.Data.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\Framework.WebApp.Data_log.ldf">
       <DependentUpon>Framework.WebApp.Data.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -383,7 +383,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55286</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55286/</IISUrl>
+          <IISUrl>http://localhost:30001/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -394,7 +394,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>Call "$(ProjectDir)PostBuild.$(ConfigurationName).bat" "$(TargetDir)" "$(TargetName)" "$(ConfigurationName)"</PostBuildEvent>
+    <PostBuildEvent>Call "$(MSBuildProjectDirectory)\PostBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)\$(OutDir)" "$(ConfigurationName)" "$(ProjectName)"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>Call "$(MSBuildProjectDirectory)\PreBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)" "$(ConfigurationName)"</PreBuildEvent>
