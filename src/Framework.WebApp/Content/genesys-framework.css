@@ -91,6 +91,10 @@ a {
         text-decoration: none;
     }
 
+#nav li:hover a {
+    color: gray;
+}
+
 .navbar-toggle {
     border-color: white !important;
     background-color: lightgray;
@@ -173,7 +177,7 @@ a {
 .glyphicon-framework, .glyphicon-environments {
     color: #FFFFFF !important;
     font-size: 4.5em;
-    line-height:0.35;
+    line-height: 0.35;
 }
 
     .glyphicon-framework:before {
@@ -181,7 +185,7 @@ a {
     }
 
     .glyphicon-environments:before {
-        content: "\2601";                
+        content: "\2601";
     }
 
 /*
@@ -209,9 +213,9 @@ a {
         font-weight: 400;
         font-size: 0.8em;
         line-height: 0.85em;
-        margin:0;
-        padding:0;
-        text-align:center;
+        margin: 0;
+        padding: 0;
+        text-align: center;
     }
 
 /* 
@@ -366,7 +370,7 @@ a {
         padding-bottom: 0.2em;
     }
 
-    .section-contents .form-horizontal {        
+    .section-contents .form-horizontal {
         text-align: center;
     }
 
@@ -376,7 +380,7 @@ a {
 .section-contact {
     background-color: lightslategray;
     color: white;
-    height:30em;
+    height: 30em;
 }
 
     .section-contact .section-header {
@@ -401,5 +405,5 @@ a {
 * footer-links
 */
 .footer-links {
-    font-size:1.1em;
+    font-size: 1.1em;
 }
