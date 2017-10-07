@@ -24,7 +24,7 @@ namespace Framework.WebApp
     {
         public const string ControllerName = "CustomerSearch";
         public const string SearchAction = "Search";
-        public const string SearchText = "Customer " + SearchAction;
+        public const string SearchActionText = SearchAction;
         public const string SearchView = "~/Views/CustomerSearch/CustomerSearch.cshtml";
         public const string SearchResultsAction = "SearchResults";
         public const string SearchResultsView = "~/Views/CustomerSearch/CustomerSearchResults.cshtml";

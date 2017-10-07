@@ -25,7 +25,7 @@ namespace Framework.WebApp
         public const string SummaryAction = "Summary";
         public const string SummaryView = "~/Views/Customer/CustomerSummary.cshtml";
         public const string CreateAction = "Create";
-        public const string CreateText = ControllerName + " " + CreateAction;
+        public const string CreateActionText = CreateAction;
         public const string CreateView = "~/Views/Customer/CustomerCreate.cshtml";
         public const string EditAction = "Edit";
         public const string EditView = "~/Views/Customer/CustomerEdit.cshtml";
